@@ -1,11 +1,11 @@
 import type { LatLng } from './types.js';
 
-/** Portland, OR bounding box (south, west, north, east) — used to constrain queries. */
+/** Portland metro bounding box (south, west, north, east) — used to constrain queries. */
 export const PORTLAND_BBOX = Object.freeze({
-  south: 45.432,
-  west: -122.836,
-  north: 45.653,
-  east: -122.472,
+  south: 45.25,
+  west: -123.25,
+  north: 45.78,
+  east: -122.2,
 });
 
 export function isInsidePortland({ lat, lng }: LatLng): boolean {

@@ -107,7 +107,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   }
   const origin: LatLng = { lat, lng };
   if (!isInsidePortland(origin)) {
-    sendError(res, 422, 'out_of_bounds', 'Origin must be inside the Portland, OR bounding box.');
+    sendError(res, 422, 'out_of_bounds', 'Origin must be inside the Portland metro area bounding box.');
     return;
   }
 

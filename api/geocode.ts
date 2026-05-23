@@ -37,7 +37,7 @@ interface GoogleGeocodeResponse {
 /**
  * GET /api/geocode?q=<address>
  *
- * Wraps the Google Maps Geocoding API, biased to the Portland, OR viewport.
+ * Wraps the Google Maps Geocoding API, biased to the Portland metro viewport.
  * Note: Google's `bounds` parameter is a *bias*, not a hard filter — we
  * therefore validate the resulting coordinate against PORTLAND_BBOX server-
  * side and reject anything outside.
@@ -122,7 +122,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
         res,
         422,
         'out_of_bounds',
-        'That address resolved outside the Portland, OR bounding box.',
+        'That address resolved outside the Portland metro area bounding box.',
         { location: result.location },
       );
       return;
